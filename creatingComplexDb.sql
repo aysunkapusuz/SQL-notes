@@ -236,6 +236,20 @@ SELECT *
 FROM client
 WHERE client_name LIKE '%school%';
 
+-- REGEXP 
+SELECT *
+FROM branch_supplier
+-- WHERE applier_name LIKE '%Label%'
+WHERE applier_name REGEXP 'Label'; -- same thing with line 242
+-- applier name must start with label
+WHERE applier_name REGEXP '^label';
+-- applier name must end with label
+WHERE applier_name REGEXP 'label$';
+-- we can also use | to reperesent multipe patterns
+WHERE applier_name REGEXP 'label|hey|yo';
+-- ge ie me
+WHERE applier_name REGEXP '[gim]e';
+WHERE applier_name REGEXP '[a-h]e';
 
 
 -- UNION 
