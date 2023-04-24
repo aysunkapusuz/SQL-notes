@@ -149,6 +149,10 @@ ORDER BY sex, first_name, last_name;
 SELECT *
 FROM employee
 LIMIT 5;
+-- let's get last 3 employee
+SELECT *
+FROM employee
+LIMIT 6, 3;
 
 -- Find the first and last names of all employees
 SELECT firts_name, last_name
