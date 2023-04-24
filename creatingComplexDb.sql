@@ -162,6 +162,11 @@ FROM employee;
 SELECT DISTINCT sex 
 FROM employee;
 
+-- IN OPERATOR
+SELECT *
+FROM employee
+WHERE sex IN ('F', 'M')
+
 -- FUNCTIONS 
 -- find the number of employees
 SELECT COUNT(emp_id)
@@ -181,6 +186,11 @@ FROM employee;
 SELECT AVG(salary)
 FROM employee
 WHERE sex = 'M';
+
+-- female employees
+SELECT AVG(salary)
+FROM employee
+WHERE NOT sex = 'M';
 
 -- find the SUM of all employees salaries
 SELECT SUM(salary)
@@ -347,7 +357,7 @@ SELECT * FROM trigger_test;
 -- ELSE IF STATEMENT
 -- DELIMITER $$
 -- CREATE
---     TRIGGER my_trigger BEFORE INSERT
+--     TRIGGER my_trigger BEFORE INSERT    --AFTER, UPDATE, DELETE 
 --     ON employee
 --     FOR EACH ROW BEGIN
 --          IF NEW.sex = 'M' THEN
